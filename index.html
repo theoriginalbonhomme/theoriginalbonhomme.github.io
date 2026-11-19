@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BONHOMME</title>
-<meta name="description" content="BONHOMME: producer, DJ, music and sound art. Unleashed and Rhyme Rumble. In service of art.">
+<meta name="description" content="BONHOMME: producer, DJ, music and sound art. Unleashed, the home for artists. Unleashed Press. Rhyme Rumble and Nii palju tähendusi!. In service of art.">
+<meta name="theme-color" content="#242323">
 <link rel="icon" href="img/bonhomme-bh.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,127 +16,270 @@
 @font-face{font-family:"Archivo";src:url(fonts/Archivo-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url(fonts/IBMPlexMono-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url(fonts/IBMPlexMono-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
-/* Layout: a slim BONHOMME sign-off on top, then the two apps as big posters, each in its own identity, then the story. */
+/* One home for everything BONHOMME makes: music, Unleashed and its parts, Press, games, the story.
+   BONHOMME identity throughout; Rhyme Rumble keeps its own. */
 :root{
   --bg:#F2F0E9; --card:#FBFAF6; --ink:#242323; --dim:#4D4B48; --line:#D9D6CC;
   --tq:#00B8C7; --tq-text:#007680; --yellow:#FFE800; --on:#242323; --logo:none;
   --display:"Archivo Black","Arial Black",sans-serif;
   --body:"Archivo",Arial,sans-serif;
   --mono:"IBM Plex Mono","Courier New",monospace;
-  /* Rhyme Rumble's own identity */
   --rr-sun:#FFCE1F; --rr-ink:#1C1233; --rr-pink:#FF4F8B; --rr-teal:#19C6C9; --rr-paper:#FBF8FF;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#242323;--card:#2E2D2C;--ink:#F2F0E9;--dim:#B8B4AA;--line:#403E3C;--tq-text:#00B8C7;--logo:invert(1);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#242323;--card:#2E2D2C;--ink:#F2F0E9;--dim:#B8B4AA;--line:#403E3C;--tq-text:#00B8C7;--logo:invert(1);color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:clamp(16px,3vw,32px) max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding:clamp(14px,3vw,32px) max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
 a{color:inherit}
 a:focus-visible{outline:3px solid var(--tq-text);outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;display:grid;gap:clamp(28px,5vw,64px)}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:clamp(36px,6vw,80px)}
 .wrap>*{min-width:0}
 .mono{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.eyebrow{font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--tq-text);margin:0}
+h2.sec{font:400 clamp(32px,6vw,64px)/.95 var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:6px 0 0}
+.sec-head{display:grid;gap:6px;border-top:3px solid var(--ink);padding-top:14px}
+.lead{font-size:clamp(17px,2vw,20px);max-width:58ch;margin:10px 0 0}
+.btn{display:inline-block;font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:11px 14px;border-radius:2px;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.tq{background:var(--tq);border-color:var(--tq);color:var(--on)}
+.btn.ye{background:var(--yellow);border-color:var(--yellow);color:var(--on)}
+.btn.tq:hover,.btn.ye:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.row{display:flex;flex-wrap:wrap;gap:8px}
 
-/* top sign-off */
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:12px}
-.top .wm{height:clamp(22px,3.4vw,34px);width:auto;display:block;filter:var(--logo)}
-.top .mono span{background:var(--yellow);color:var(--on);padding:3px 7px}
+/* top */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px 20px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:12px}
+.top .bh{height:26px;width:auto;display:block;filter:var(--logo)}
+.top nav{display:flex;flex-wrap:wrap;gap:4px 16px}
+.top nav a{font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--dim);padding:6px 0}
+.top nav a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--tq)}
 
-/* the two app posters */
-.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
-.app{position:relative;display:grid;align-content:space-between;gap:28px;min-height:clamp(440px,62vw,620px);padding:clamp(22px,4vw,44px);text-decoration:none;overflow:hidden}
+/* hero: the name, big */
+.hero{display:grid;gap:18px}
+.hero .wm{width:100%;height:auto;display:block;filter:var(--logo)}
+.hero .tag{display:flex;justify-content:space-between;align-items:baseline;gap:10px 24px;flex-wrap:wrap}
+.hero .tag span{background:var(--yellow);color:var(--on);padding:3px 8px}
+.hero p.lead{margin:0}
 
-/* Unleashed: BONHOMME identity, charcoal ground */
-.un{background:#242323;color:#F2F0E9;container-type:inline-size}
-.un .kick{color:#B8B4AA}
+/* map of everything */
+.map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.map a{display:grid;gap:6px;align-content:start;background:var(--card);border:1px solid var(--line);padding:16px;text-decoration:none;min-height:130px}
+.map a b{font:400 22px/1 var(--display);text-transform:uppercase}
+.map a span{font-size:14px;color:var(--dim)}
+.map a:hover{border-color:var(--ink)}
+.map a.feat{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.map a.feat span{color:#B8B4AA}
+
+/* music */
+.music{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:end}
+.music .acts{display:grid;gap:10px}
+
+/* Unleashed poster */
+.un{background:#242323;color:#F2F0E9;padding:clamp(22px,4vw,44px);display:grid;gap:28px;container-type:inline-size}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .un{box-shadow:inset 0 0 0 1.5px #403E3C}}
 :root[data-theme="dark"] .un{box-shadow:inset 0 0 0 1.5px #403E3C}
-.un .word{font:400 14.8cqi/.84 var(--display);white-space:nowrap;letter-spacing:-.04em;text-transform:uppercase;margin:0}
+.un .kick{color:#B8B4AA;margin:0}
+.un .word{font:400 14.4cqi/.84 var(--display);white-space:nowrap;letter-spacing:-.04em;text-transform:uppercase;margin:0}
 .un .word span{display:inline-block;background:#FFE800;color:#242323;padding:0 .04em}
-.un .line{font:400 15px/1.6 var(--mono);max-width:34ch;margin:18px 0 0;color:#F2F0E9}
-.un .by{display:flex;align-items:center;gap:10px;margin-top:16px}
+.un .line{font:400 15px/1.6 var(--mono);max-width:46ch;margin:0;color:#F2F0E9}
+.un .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px}
+.un .parts a{display:grid;gap:4px;border-top:2px solid #F2F0E9;padding-top:10px;text-decoration:none}
+.un .parts a b{font:400 20px/1 var(--display);text-transform:uppercase}
+.un .parts a span{font-size:14px;color:#B8B4AA}
+.un .parts a:hover b{color:#00B8C7}
+.un .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.un .b{font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:14px 18px;border-radius:2px;color:#242323;text-decoration:none}
+.un .b.tq{background:#00B8C7}.un .b.ye{background:#FFE800}
+.un .b:hover{background:#F2F0E9}
+.un .by{display:flex;align-items:center;gap:10px}
 .un .by img{height:20px;width:auto;filter:invert(1)}
 .un .by span{color:#B8B4AA}
-.un .acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.un .b{font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:14px 18px;border-radius:2px;color:#242323}
-.un .b.tq{background:#00B8C7}.un .b.ye{background:#FFE800}
-.un .inv{color:#B8B4AA;font:400 13px var(--mono);width:100%}
-.un:hover .b.tq,.un:focus-visible .b.tq{background:#F2F0E9}
 
-/* Rhyme Rumble: its own identity, sunny halftone wall */
+/* press */
+.press{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.press .card{background:var(--tq);color:var(--on);padding:clamp(20px,3vw,32px);display:grid;gap:12px;align-content:start}
+.press .card h3{font:400 clamp(26px,4vw,40px)/.98 var(--display);text-transform:uppercase;margin:0}
+.press .card p{margin:0}
+.press .card .btn{border-color:var(--on);justify-self:start}
+.press .card .btn:hover{background:var(--on);color:var(--tq)}
+.press .side{display:grid;gap:12px;align-content:start}
+.press .side .item{background:var(--card);border:1px solid var(--line);padding:16px;display:grid;gap:6px}
+.press .side .item b{font:400 22px/1 var(--display);text-transform:uppercase}
+.press .side .item span{font-size:15px}
+
+/* games */
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+.game{position:relative;display:grid;align-content:space-between;gap:28px;min-height:clamp(400px,52vw,540px);padding:clamp(22px,4vw,44px);text-decoration:none;overflow:hidden}
 .rr{background:var(--rr-sun) radial-gradient(circle,rgba(28,18,51,.12) 1.6px,transparent 1.8px) 0 0/15px 15px;color:var(--rr-ink);font-family:"Rubik",system-ui,sans-serif;justify-items:center;text-align:center}
 .rr .kick{font:700 12px "Rubik",sans-serif;letter-spacing:.1em;text-transform:uppercase;background:var(--rr-paper);border:3px solid var(--rr-ink);border-radius:999px;padding:6px 14px;justify-self:center}
-.rr .logo{font-family:"Bungee","Arial Black",Impact,sans-serif;font-weight:400;font-size:clamp(54px,9vw,104px);line-height:.92;margin:0;color:var(--rr-pink);-webkit-text-stroke:2px var(--rr-ink);text-shadow:4px 4px 0 var(--rr-ink),8px 8px 0 var(--rr-teal);transform:rotate(-3deg)}
+.rr .logo{font-family:"Bungee","Arial Black",Impact,sans-serif;font-weight:400;font-size:clamp(54px,9vw,100px);line-height:.92;margin:0;color:var(--rr-pink);-webkit-text-stroke:2px var(--rr-ink);text-shadow:4px 4px 0 var(--rr-ink),8px 8px 0 var(--rr-teal);transform:rotate(-3deg)}
 .rr .logo span{display:block}.rr .logo span+span{color:var(--rr-paper)}
 .rr .line{font-weight:500;font-size:clamp(17px,1.9vw,20px);margin:22px auto 0;max-width:26ch}
 .rr .b{font-family:"Bungee","Arial Black",sans-serif;font-size:18px;padding:16px 24px;background:var(--rr-pink);color:var(--rr-ink);border:3px solid var(--rr-ink);border-radius:14px;box-shadow:5px 5px 0 var(--rr-ink)}
 .rr:hover .b,.rr:focus-visible .b{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--rr-ink)}
 .rr .langs{font-weight:500;font-size:14px;margin:20px 0 0}
+.np{background:#F2F0E9;color:#242323;border:3px solid #242323}
+.np .kick{color:#007680}
+.np{container-type:inline-size}
+.np .title{font:400 clamp(34px,12.5cqi,80px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin:0}
+.np .title em{font-style:normal;display:inline-block;background:#FFE800;padding:0 .05em}
+.np .line{font-size:clamp(17px,1.9vw,20px);max-width:32ch;margin:18px 0 0}
+.np .words{font:400 14px var(--mono);color:#4D4B48;margin:12px 0 0}
+.np .b{display:inline-block;font:700 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:14px 18px;background:#00B8C7;color:#242323;border-radius:2px}
+.np:hover .b,.np:focus-visible .b{background:#242323;color:#F2F0E9}
 
 /* story */
 .about{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:start}
 .portrait{width:100%;height:auto;aspect-ratio:1;display:block}
-.about h2{font:400 clamp(30px,5vw,52px)/.98 var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:0 0 18px}
+.about h3{font:400 clamp(28px,4.4vw,46px)/.98 var(--display);letter-spacing:-.01em;text-transform:uppercase;margin:0 0 16px}
 .about p{margin:0 0 14px;max-width:62ch}
 .based{color:var(--tq-text)}
 .meaning{font:400 14px var(--mono);color:var(--dim)}
-.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.btn{font:700 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--ink);padding:10px 14px;border-radius:2px;text-decoration:none}
-.btn:hover{background:var(--ink);color:var(--bg)}
 
 footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px;color:var(--dim)}
 footer img{height:24px;width:auto;filter:var(--logo)}
-@media (max-width:600px){.about{grid-template-columns:1fr}.portrait{max-width:180px}.app{min-height:400px}}
-@media (prefers-reduced-motion:no-preference){.rr .b,.un .b{transition:transform .12s,box-shadow .12s,background .15s}}
+@media (max-width:760px){.music,.press{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a b{font-size:18px}.map a span{font-size:13px}}
+@media (max-width:600px){.about{grid-template-columns:1fr}.portrait{max-width:180px}.game{min-height:380px}}
+@media (prefers-reduced-motion:no-preference){.rr .b,.np .b,.un .b,.btn{transition:transform .12s,box-shadow .12s,background .15s,color .15s}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <img class="wm" src="img/bonhomme-wordmark.svg" alt="BONHOMME" width="6051" height="712">
-    <p class="mono" style="margin:0"><span>In service of art.</span></p>
+    <a href="./" aria-label="BONHOMME home"><img class="bh" src="img/bonhomme-bh.svg" alt="BH"></a>
+    <nav aria-label="Sections">
+      <a href="#music">Music</a>
+      <a href="#unleashed">Unleashed</a>
+      <a href="#press">Press</a>
+      <a href="#games">Games</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
 
-  <main class="apps" aria-label="Made by BONHOMME">
-    <a class="app un" href="/unleashed/">
-      <div>
-        <p class="mono kick" style="margin:0 0 18px">Platform · invite only</p>
-        <h1 class="word">Unleash<span>ed</span></h1>
-        <p class="line">A central portfolio, with the tools to make music with artists anywhere in the world. Free to play.</p>
-        <div class="by"><img src="img/bonhomme-bh.svg" alt=""><span class="mono">A BONHOMME platform</span></div>
-      </div>
-      <div class="acts">
-        <span class="b tq">Open Unleashed</span>
-        <span class="b ye">Unleash</span>
-        <span class="inv">Received an invitation to unleash? Join inside.</span>
-      </div>
-    </a>
+  <section class="hero" aria-label="BONHOMME">
+    <h1 style="margin:0"><img class="wm" src="img/bonhomme-wordmark.svg" alt="BONHOMME" width="6051" height="712"></h1>
+    <div class="tag">
+      <p class="mono" style="margin:0"><span>In service of art.</span></p>
+      <p class="mono" style="margin:0;color:var(--dim)">Kampala · Tallinn · on the road</p>
+    </div>
+    <p class="lead">Music, a home for artists, a press and games. Everything BONHOMME makes, in one place.</p>
+  </section>
 
-    <a class="app rr" href="/rhyme-rumble/">
-      <span class="kick">Game · made with my son</span>
-      <div>
-        <h2 class="logo"><span>Rhyme</span><span>Rumble</span></h2>
-        <p class="line">Design your rapper. Grab the mic. Battle your friends.</p>
-      </div>
-      <div>
-        <span class="b">Play now</span>
-        <p class="langs">Online battles, or take on the robot in English or Estonian.</p>
-      </div>
-    </a>
-  </main>
+  <section aria-label="Everything in one place">
+    <div class="map">
+      <a class="feat" href="/unleashed/"><b>Unleashed</b><span>The home for artists. Invite only.</span></a>
+      <a href="/unleashed/#channel"><b>Latest sets</b><span>DJ mixes and tracks, free to play.</span></a>
+      <a href="/unleashed/#studio"><b>Studio</b><span>Sign the split, then make it together.</span></a>
+      <a href="/unleashed/#press"><b>Press</b><span>Books and games for writers.</span></a>
+      <a href="/rhyme-rumble/"><b>Rhyme Rumble</b><span>The rap battle game.</span></a>
+      <a href="/nii-palju-tahendusi/"><b>Nii palju tähendusi!</b><span>777 Estonian words, many meanings.</span></a>
+    </div>
+  </section>
 
-  <section class="about" aria-labelledby="about-h">
+  <section id="music" class="music" aria-labelledby="music-h">
+    <div class="sec-head">
+      <p class="eyebrow">01 · Music</p>
+      <h2 class="sec" id="music-h">Deep dub to techno. Made by hand.</h2>
+      <p class="lead">DJ sets from Kampala, Ntungamo, Tallinn and the ports in between, and productions from the studio. Genre doesn’t matter. Good music and perfect sound do.</p>
+    </div>
+    <div class="acts">
+      <a class="btn ye" href="/unleashed/#channel">Latest DJ set</a>
+      <a class="btn tq" href="/unleashed/#library">The whole library</a>
+      <div class="row">
+        <a class="btn" href="https://www.mixcloud.com/theoriginalbonhomme/" rel="noopener">Mixcloud</a>
+        <a class="btn" href="https://soundcloud.com/rickyvonmond" rel="noopener">SoundCloud</a>
+        <a class="btn" href="https://www.youtube.com/@theoriginalbonhomme" rel="noopener">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="unleashed" class="un" aria-labelledby="un-h">
+    <div style="display:grid;gap:16px">
+      <p class="mono kick">02 · Platform · invite only</p>
+      <h2 class="word" id="un-h">Unleash<span>ed</span></h2>
+      <p class="line">An invite-only home for underground club music. Make things together, sign the split before release, and everyone who made it gets paid when it earns.</p>
+      <div class="by"><img src="img/bonhomme-bh.svg" alt=""><span class="mono">A BONHOMME platform</span></div>
+    </div>
+    <div class="parts">
+      <a href="/unleashed/#about"><b>How it works</b><span>The rules, the split, the cities.</span></a>
+      <a href="/unleashed/#library"><b>Library</b><span>Free for every DJ to play.</span></a>
+      <a href="/unleashed/#artists"><b>Artists</b><span>Every Unleasher, vouched for.</span></a>
+      <a href="/unleashed/#studio"><b>Studio</b><span>Rooms with a signed split.</span></a>
+      <a href="/unleashed/#collab"><b>Call board</b><span>Open calls. Send a demo.</span></a>
+    </div>
+    <div class="acts">
+      <a class="b tq" href="/unleashed/">Open Unleashed</a>
+      <a class="b ye" href="/unleashed/#join">Got an invitation? Join</a>
+    </div>
+  </section>
+
+  <section id="press" aria-labelledby="press-h" style="display:grid;gap:18px">
+    <div class="sec-head">
+      <p class="eyebrow">03 · Unleashed Press</p>
+      <h2 class="sec" id="press-h">You write. We carry the rest.</h2>
+      <p class="lead">Publishing for writers and artists outside the big houses. You keep your copyright and the larger share. We bring the funding, the print, the digital side and the launch.</p>
+    </div>
+    <div class="press">
+      <div class="card">
+        <p class="mono" style="margin:0">First title</p>
+        <h3>Kati Murutar</h3>
+        <p>“Meistrite aabits”, two volumes for learners of Estonian aged 7 to 107, and the word game “Nii palju tähendusi!”. Out for her jubilee on 21 March 2027.</p>
+        <div class="row">
+          <a class="btn" href="/unleashed/#artist-kati-murutar">Kati’s page</a>
+          <a class="btn" href="/nii-palju-tahendusi/">Play the game</a>
+        </div>
+      </div>
+      <div class="side">
+        <div class="item"><b>Funding</b><span>We find the grants and write the applications with you. Nothing is paid out before the funding is in.</span></div>
+        <div class="item"><b>Print, digital, launch</b><span>Fair print quotes, editing and design, e-book, audio and apps, and a launch night.</span></div>
+        <a class="btn ye" href="/unleashed/#press" style="justify-self:start">About Unleashed Press</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="games" aria-labelledby="games-h" style="display:grid;gap:18px">
+    <div class="sec-head">
+      <p class="eyebrow">04 · Games</p>
+      <h2 class="sec" id="games-h">Play with words.</h2>
+    </div>
+    <div class="games">
+      <a class="game rr" href="/rhyme-rumble/">
+        <span class="kick">Game · made with my son</span>
+        <div>
+          <h3 class="logo"><span>Rhyme</span><span>Rumble</span></h3>
+          <p class="line">Design your rapper. Grab the mic. Battle your friends.</p>
+        </div>
+        <div>
+          <span class="b">Play now</span>
+          <p class="langs">Online battles, or take on the robot in English or Estonian.</p>
+        </div>
+      </a>
+      <a class="game np" href="/nii-palju-tahendusi/" lang="et">
+        <p class="mono kick" style="margin:0">Word game · Unleashed Press</p>
+        <div>
+          <h3 class="title">Nii palju <em>tähendusi!</em></h3>
+          <p class="line" lang="en">777 Estonian words with more than one meaning. Pick the meanings, or find the word.</p>
+          <p class="words">pea · keel · tuli · laud · palk</p>
+        </div>
+        <div>
+          <span class="b">Mängi</span>
+          <p class="words" lang="en">Word list by Kati Murutar. Works on any phone.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-h">
     <img class="portrait" src="img/bonhomme-portrait.svg" alt="The BONHOMME stencil face, off-white on charcoal">
     <div>
-      <h2 id="about-h">A good man, on the road</h2>
+      <p class="eyebrow">05 · About</p>
+      <h3 id="about-h" style="margin-top:6px">A good man, on the road</h3>
       <p class="mono based">Producer · DJ · Music &amp; sound art · Travelling the world for more than 30 years</p>
       <p>In the Cathar lands of southern France, people called the members of a brotherhood of absolute goodness bonshommes: good men. BONHOMME carries that name into dance music culture: music made by loving humans, in service of art.</p>
       <p>Genre doesn’t matter. What matters is that the music is good and the sound is perfect.</p>
       <p class="meaning">Bonhomme: old French for “good man”</p>
-      <div class="links">
+      <div class="row" style="margin-top:20px">
         <a class="btn" href="/unleashed/#artist-bonhomme">Full profile</a>
-        <a class="btn" href="https://www.mixcloud.com/theoriginalbonhomme/" rel="noopener">Mixcloud</a>
-        <a class="btn" href="https://soundcloud.com/rickyvonmond" rel="noopener">SoundCloud</a>
-        <a class="btn" href="https://www.youtube.com/@theoriginalbonhomme" rel="noopener">YouTube</a>
         <a class="btn" href="https://www.youtube.com/@rickyvonmond" rel="noopener">More on YouTube</a>
       </div>
     </div>
@@ -143,7 +287,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
 
   <footer>
     <img src="img/bonhomme-bh.svg" alt="BH">
-    <span class="mono" style="font-weight:400">theoriginalbonhomme.github.io</span>
+    <span class="mono" style="font-weight:400">BONHOMME · In service of art.</span>
   </footer>
 </div>
 </body>
