@@ -138,6 +138,11 @@ h2.sec{font:400 clamp(32px,6vw,64px)/.95 var(--display);letter-spacing:-.01em;te
 
 footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px;color:var(--dim)}
 footer img{height:24px;width:auto;filter:var(--logo)}
+.foot-links{display:flex;gap:4px 20px;flex-wrap:wrap}
+.foot-links a{color:var(--dim);text-decoration:none;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 0;border-bottom:3px solid transparent}
+.foot-links a:hover{color:var(--ink)}
+.foot-links a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--tq)}
+@media (max-width:520px){.foot-links{flex-direction:column;gap:2px}}
 @media (max-width:760px){.music,.publishing{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a b{font-size:18px}.map a span{font-size:13px}}
 @media (max-width:600px){.about{grid-template-columns:1fr}.portrait{max-width:180px}.game{min-height:380px}}
 @media (prefers-reduced-motion:no-preference){.rr .b,.np .b,.un .b,.btn{transition:transform .12s,box-shadow .12s,background .15s,color .15s}}
@@ -287,7 +292,11 @@ footer img{height:24px;width:auto;filter:var(--logo)}
 
   <footer>
     <img src="img/bonhomme-bh.svg" alt="BH">
-    <span class="mono" style="font-weight:400">BONHOMME · In service of art.</span>
+    <nav class="foot-links mono" aria-label="Main sections">
+      <a href="#top" aria-current="page">BONHOMME · In service of art</a>
+      <a href="https://theoriginalbonhomme.github.io/unleashed/#publishing">Unleashed Publishing</a>
+      <a href="https://theoriginalbonhomme.github.io/unleashed/">Unleashed Platform</a>
+    </nav>
   </footer>
 </div>
 </body>
