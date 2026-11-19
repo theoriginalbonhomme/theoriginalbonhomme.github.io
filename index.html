@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BONHOMME</title>
-<meta name="description" content="BONHOMME: producer, DJ, music and sound art. Unleashed, the home for artists. Unleashed Press. Rhyme Rumble and Nii palju tähendusi!. In service of art.">
+<meta name="description" content="BONHOMME: producer, DJ, music and sound art. Unleashed, the home for artists. Unleashed Publishing. Rhyme Rumble and Nii palju tähendusi!. In service of art.">
 <meta name="theme-color" content="#242323">
 <link rel="icon" href="img/bonhomme-bh.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 @font-face{font-family:"Archivo";src:url(fonts/Archivo-SemiBold.woff2) format("woff2");font-weight:600;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url(fonts/IBMPlexMono-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url(fonts/IBMPlexMono-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
-/* One home for everything BONHOMME makes: music, Unleashed and its parts, Press, games, the story.
+/* One home for everything BONHOMME makes: music, Unleashed and its parts, Publishing, games, the story.
    BONHOMME identity throughout; Rhyme Rumble keeps its own. */
 :root{
   --bg:#F2F0E9; --card:#FBFAF6; --ink:#242323; --dim:#4D4B48; --line:#D9D6CC;
@@ -95,17 +95,17 @@ h2.sec{font:400 clamp(32px,6vw,64px)/.95 var(--display);letter-spacing:-.01em;te
 .un .by img{height:20px;width:auto;filter:invert(1)}
 .un .by span{color:#B8B4AA}
 
-/* press */
-.press{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
-.press .card{background:var(--tq);color:var(--on);padding:clamp(20px,3vw,32px);display:grid;gap:12px;align-content:start}
-.press .card h3{font:400 clamp(26px,4vw,40px)/.98 var(--display);text-transform:uppercase;margin:0}
-.press .card p{margin:0}
-.press .card .btn{border-color:var(--on);justify-self:start}
-.press .card .btn:hover{background:var(--on);color:var(--tq)}
-.press .side{display:grid;gap:12px;align-content:start}
-.press .side .item{background:var(--card);border:1px solid var(--line);padding:16px;display:grid;gap:6px}
-.press .side .item b{font:400 22px/1 var(--display);text-transform:uppercase}
-.press .side .item span{font-size:15px}
+/* publishing */
+.publishing{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.publishing .card{background:var(--tq);color:var(--on);padding:clamp(20px,3vw,32px);display:grid;gap:12px;align-content:start}
+.publishing .card h3{font:400 clamp(26px,4vw,40px)/.98 var(--display);text-transform:uppercase;margin:0}
+.publishing .card p{margin:0}
+.publishing .card .btn{border-color:var(--on);justify-self:start}
+.publishing .card .btn:hover{background:var(--on);color:var(--tq)}
+.publishing .side{display:grid;gap:12px;align-content:start}
+.publishing .side .item{background:var(--card);border:1px solid var(--line);padding:16px;display:grid;gap:6px}
+.publishing .side .item b{font:400 22px/1 var(--display);text-transform:uppercase}
+.publishing .side .item span{font-size:15px}
 
 /* games */
 .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
@@ -138,7 +138,7 @@ h2.sec{font:400 clamp(32px,6vw,64px)/.95 var(--display);letter-spacing:-.01em;te
 
 footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px;color:var(--dim)}
 footer img{height:24px;width:auto;filter:var(--logo)}
-@media (max-width:760px){.music,.press{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a b{font-size:18px}.map a span{font-size:13px}}
+@media (max-width:760px){.music,.publishing{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a b{font-size:18px}.map a span{font-size:13px}}
 @media (max-width:600px){.about{grid-template-columns:1fr}.portrait{max-width:180px}.game{min-height:380px}}
 @media (prefers-reduced-motion:no-preference){.rr .b,.np .b,.un .b,.btn{transition:transform .12s,box-shadow .12s,background .15s,color .15s}}
 </style>
@@ -150,7 +150,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
     <nav aria-label="Sections">
       <a href="#music">Music</a>
       <a href="#unleashed">Unleashed</a>
-      <a href="#press">Press</a>
+      <a href="#publishing">Publishing</a>
       <a href="#games">Games</a>
       <a href="#about">About</a>
     </nav>
@@ -162,7 +162,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
       <p class="mono" style="margin:0"><span>In service of art.</span></p>
       <p class="mono" style="margin:0;color:var(--dim)">Kampala · Tallinn · on the road</p>
     </div>
-    <p class="lead">Music, a home for artists, a press and games. Everything BONHOMME makes, in one place.</p>
+    <p class="lead">Music, a home for artists, publishing and games. Everything BONHOMME makes, in one place.</p>
   </section>
 
   <section aria-label="Everything in one place">
@@ -170,7 +170,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
       <a class="feat" href="/unleashed/"><b>Unleashed</b><span>The home for artists. Invite only.</span></a>
       <a href="/unleashed/#channel"><b>Latest sets</b><span>DJ mixes and tracks, free to play.</span></a>
       <a href="/unleashed/#studio"><b>Studio</b><span>Sign the split, then make it together.</span></a>
-      <a href="/unleashed/#press"><b>Press</b><span>Books and games for writers.</span></a>
+      <a href="/unleashed/#publishing"><b>Publishing</b><span>Books and games for writers.</span></a>
       <a href="/rhyme-rumble/"><b>Rhyme Rumble</b><span>The rap battle game.</span></a>
       <a href="/nii-palju-tahendusi/"><b>Nii palju tähendusi!</b><span>777 Estonian words, many meanings.</span></a>
     </div>
@@ -213,13 +213,13 @@ footer img{height:24px;width:auto;filter:var(--logo)}
     </div>
   </section>
 
-  <section id="press" aria-labelledby="press-h" style="display:grid;gap:18px">
+  <section id="publishing" aria-labelledby="publishing-h" style="display:grid;gap:18px">
     <div class="sec-head">
-      <p class="eyebrow">03 · Unleashed Press</p>
-      <h2 class="sec" id="press-h">You write. We carry the rest.</h2>
+      <p class="eyebrow">03 · Unleashed Publishing</p>
+      <h2 class="sec" id="publishing-h">You write. We carry the rest.</h2>
       <p class="lead">Publishing for writers and artists outside the big houses. You keep your copyright and the larger share. We bring the funding, the print, the digital side and the launch.</p>
     </div>
-    <div class="press">
+    <div class="publishing">
       <div class="card">
         <p class="mono" style="margin:0">First title</p>
         <h3>Kati Murutar</h3>
@@ -232,7 +232,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
       <div class="side">
         <div class="item"><b>Funding</b><span>We find the grants and write the applications with you. Nothing is paid out before the funding is in.</span></div>
         <div class="item"><b>Print, digital, launch</b><span>Fair print quotes, editing and design, e-book, audio and apps, and a launch night.</span></div>
-        <a class="btn ye" href="/unleashed/#press" style="justify-self:start">About Unleashed Press</a>
+        <a class="btn ye" href="/unleashed/#publishing" style="justify-self:start">About Unleashed Publishing</a>
       </div>
     </div>
   </section>
@@ -255,7 +255,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
         </div>
       </a>
       <a class="game np" href="/nii-palju-tahendusi/" lang="et">
-        <p class="mono kick" style="margin:0">Word game · Unleashed Press</p>
+        <p class="mono kick" style="margin:0">Word game · Unleashed Publishing</p>
         <div>
           <h3 class="title">Nii palju <em>tähendusi!</em></h3>
           <p class="line" lang="en">777 Estonian words with more than one meaning. Pick the meanings, or find the word.</p>
