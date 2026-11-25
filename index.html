@@ -75,6 +75,7 @@ h2.sec{font:400 clamp(32px,6vw,64px)/.95 var(--display);letter-spacing:-.01em;te
 /* music */
 .music{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:end}
 .music .acts{display:grid;gap:10px}
+.music .seal{width:min(100%,240px);height:auto;aspect-ratio:1;display:block;justify-self:end;margin-bottom:8px}
 
 /* Unleashed poster */
 .un{background:#242323;color:#F2F0E9;padding:clamp(22px,4vw,44px);display:grid;gap:28px;container-type:inline-size}
@@ -148,7 +149,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
 .foot-links a:hover{color:var(--ink)}
 .foot-links a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--tq)}
 @media (max-width:520px){.foot-links{flex-direction:column;gap:2px}}
-@media (max-width:760px){.music,.publishing{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a .th{width:calc(100% + 28px);margin:-14px -14px 4px}.map a b{font-size:18px}.map a span{font-size:13px}}
+@media (max-width:760px){.music .seal{width:140px;justify-self:start}.music,.publishing{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,minmax(0,1fr))}.map a{min-height:0;padding:14px}.map a .th{width:calc(100% + 28px);margin:-14px -14px 4px}.map a b{font-size:18px}.map a span{font-size:13px}}
 @media (max-width:600px){.about{grid-template-columns:1fr}.portrait{max-width:180px}.game{min-height:380px}}
 @media (prefers-reduced-motion:no-preference){.rr .b,.np .b,.un .b,.btn{transition:transform .12s,box-shadow .12s,background .15s,color .15s}}
 </style>
@@ -196,6 +197,7 @@ footer img{height:24px;width:auto;filter:var(--logo)}
       <p class="mono" style="margin:6px 0 0;font-weight:700">Out 2 Mar 2027 · Teretu EP on MÜRK Records · Baranka · KAWO with iLLEGAL P</p>
     </div>
     <div class="acts">
+      <img class="seal" src="img/bonhomme-seal.svg" alt="The BONHOMME seal: the stencil face on turquoise" width="512" height="512">
       <a class="btn ye" href="/unleashed/#channel">Latest DJ set</a>
       <a class="btn tq" href="/unleashed/#library">The whole library</a>
       <div class="row">
